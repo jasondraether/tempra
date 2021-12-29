@@ -5,21 +5,23 @@ t0 and/or sampling rate
 
 """
 
-class Temper(object):
-    def __init__(self, axis, unit):
 
-        self._axes = []
+class Tempra(object):
+    def __init__(self, axis, unit=None):
 
-        self.core_unit = unit
+        self.axes = []
+        self.base_unit = unit
 
     def add(self, axis, unit):
         pass
 
-    def window(self, rate, unit, stride):
-        pass
+    def window(self, size, stride, unit=None):
+        if unit is None:
+            unit = self.base_unit
 
-    def offset(self, rate, unit):
-        pass
+    def offset(self, size, unit=None):
+        if unit is None:
+            unit = self.base_unit
 
     def _unify(self):
         """
